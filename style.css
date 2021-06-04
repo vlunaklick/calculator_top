@@ -1,0 +1,230 @@
+:root{
+    --color-ops: #3e8da1;
+    --color-fops: #ffa62b;
+    --color-text: #ede7e3;
+    --color-osc: #16697a;
+    --hov-num: #115563; 
+    --hov-props: #347485;
+}
+
+body{
+    background-color: #641220;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#full-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    text-shadow: 0 0 2px #000;
+    color: var(--color-text);
+}
+
+#container{
+    width: 25rem;
+    height: 600px;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: repeat(6,100px);
+    grid-template-areas: "result result result result"
+    "reset div multi back"
+    "siete ocho nueve menos"
+    "cuatro cinco seis mas"
+    "uno dos tres igual"
+    "signo cero coma igual";
+    box-shadow: 0 0 2px #000;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+    filter: invert(82%) sepia(25%) saturate(5082%) hue-rotate(336deg) brightness(102%) contrast(101%);
+    margin-top: 7px;
+}
+
+#display-res{
+    font-size: 70px;
+    margin-top: 10px;
+    text-align: right;
+    margin-right: 10px;
+    color: var(--color-text);
+    text-shadow: 0 0 2px #000;
+}
+
+button{
+    font-size: 30px;
+    border: none;
+    border: 1px solid #000;
+    font-weight: 900;
+    cursor: pointer;
+    text-shadow: 0 0 2px #000;
+}
+
+#disp-cont{
+    grid-area: result;
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+
+.uno{
+    grid-area: uno;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.dos{
+    grid-area: dos;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.tres{
+    grid-area: tres;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+
+.cuatro{
+    grid-area: cuatro;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.cinco{
+    grid-area: cinco;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.seis{
+    grid-area: seis;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+
+.siete{
+    grid-area: siete;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.ocho{
+    grid-area: ocho;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.nueve{
+    grid-area: nueve;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+
+.cero{
+    grid-area: cero;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.chans{
+    grid-area: signo;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.dot{
+    grid-area: coma;
+    color: var(--color-text);
+    border: 1px solid #000;
+    background-color: var(--color-osc);
+}
+.nums:hover{
+    background-color: var(--hov-num);
+}
+.dot:hover{
+    background-color: var(--hov-num);
+}
+.chans:hover{
+    background-color: var(--hov-num);
+}
+
+
+
+#equal{
+    grid-area: igual;
+    background-color: #ffa62b;
+    color: var(--color-text);
+}
+#equal:hover{
+    background-color: #d18822;
+}
+
+#resta{
+    grid-area: menos;
+    background-color: var(--color-ops);
+    color: var(--color-fops);
+}
+#resta:hover{
+    background-color: var(--hov-props);
+}
+
+#suma{
+    grid-area: mas;
+    background-color: var(--color-ops);
+    color: var(--color-fops);
+}
+#suma:hover{
+    background-color: var(--hov-props);
+}
+
+#reset{
+    grid-area: reset;
+    background-color: var(--color-ops);
+    color: var(--color-fops);
+}
+#reset:hover{
+    background-color: var(--hov-props);
+}
+
+#divid{
+    grid-area: div;
+    background-color: var(--color-ops);
+    color: var(--color-fops);
+}
+#divid:hover{
+    background-color: var(--hov-props);
+}
+
+#back{
+    grid-area: back;
+    background-color: var(--color-ops);
+    color: var(--color-fops);
+}
+#back:hover{
+    background-color: var(--hov-props);
+}
+
+#multi{
+    grid-area: multi;
+    background-color: var(--color-ops);
+    color: var(--color-fops);
+}
+#multi:hover{
+    background-color: var(--hov-props);
+}
+
+#error{
+    color: var(--color-text);
+    font-size: 20px;
+}
+
