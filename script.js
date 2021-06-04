@@ -60,7 +60,6 @@ function clearCal(){
 function changeSim(){
     if (display.textContent == "0") return;
     let change = display.textContent.toString();
-    change = change.padStart(-1,"-");
     display.textContent = `-${change}`;
 }
 
@@ -98,13 +97,11 @@ function resultado(){
     if (resolve(fOp,sOp,oper).toString().length > 8){
         pError.innerHTML = "We have cap the max of numbers on screen to be 8."
         display.textContent = resolve(fOp,sOp,oper).toString().slice(0,8)
-        oper = "";
-        newNum = true
     } else{
         display.textContent = resolve(fOp,sOp,oper);
-        newNum = true
-        oper = "";
     }
+    newNum = true
+    oper = "";
 }
 
 function setOp(val) {
@@ -125,6 +122,13 @@ function givekey(e){
     if(e.key == "-") setOp("-");
     if(e.key == "*") setOp("X");
     if(e.key == "/") setOp("/");
+    if(e.key === "Escape") clearCal();
+    if (e.key === ".") addDot();
+}
+
+function addDot(){
+    let varia = display.textContent.toString();
+    display.textContent = `${varia}.`;
 }
 
 // Get importantes
@@ -153,3 +157,4 @@ reset.addEventListener('click', ()=> clearCal());
 btn.forEach((button) => button.addEventListener('click', () => appNum(button.textContent)));
 opers.forEach((button) => button.addEventListener('click', () => setOp(button.textContent)));
 window.addEventListener('keydown', givekey);
+dot.addEventListener('click', addDot);
