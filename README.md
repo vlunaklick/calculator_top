@@ -5,13 +5,12 @@
 
 > In this project i recreated a calculator where you can do operations like add, substract, divide and multiply. Also, you can use it with the num pad.
 
-### ✨ [Live View](https://vlunaklick.github.io/etch_a_sketch/)
+### ✨ [Live View](https://vlunaklick.github.io/calculator_top/)
 
 ## Author
 
 👤 **vlunaklick**
 
-* Website: www.linkedin.com/in/valentín-lunaklick-548360212
 * Github: [@vlunaklick](https://github.com/vlunaklick)
 * LinkedIn: [@valentín-lunaklick](https://linkedin.com/in/valentín-lunaklick)
 
