@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> In this project i recreated a calculator where you can do operations like add, substract, divide and multiply. Also, you can use it with the num pad.
+> In this project I recreated a calculator where you can do operations like add, substract, divide and multiply. Also, you can use it with the num pad.
 
 ### ✨ [Live View](https://vlunaklick.github.io/calculator_top/)
 
@@ -12,7 +12,7 @@
 👤 **vlunaklick**
 
 * Github: [@vlunaklick](https://github.com/vlunaklick)
-* LinkedIn: [@valentín-lunaklick](https://linkedin.com/in/valentín-lunaklick)
+* LinkedIn: [@vlunaklick](https://linkedin.com/in/vlunaklick)
 
 ## My Profile
 
