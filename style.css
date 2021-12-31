@@ -1,35 +1,97 @@
 :root{
-    --color-ops: #3e8da1;
-    --color-fops: #ffa62b;
-    --color-text: #ede7e3;
-    --color-osc: #16697a;
-    --hov-num: #115563; 
-    --hov-props: #347485;
+    --color-fops: #186FAF;
+    --color-ops: #9FB3C8;
+    --hov-props: #829AB1;
+
+    --color-text: #F0F4F8;
+    --color-osc: #BCCCDC;
+    --hov-num: #9FB3C8; 
+
+    --background-color: #F0F4F8;
+
+    --title-color: #243B53;
+
+    --equal-color: #DCEEFB;
+    --equal-color-bg: #186FAF;
+    --equal-hover: #0F609B;
+
+    --border-radius: .5rem;
+
+    --shadow-color: 210deg 11% 60%;
+    --shadow-elevation-low:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+    --shadow-elevation-medium:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+    --shadow-elevation-high:
+    0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-body{
-    background-color: #641220;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+    font-size: 16px
 }
 
-#full-cont{
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, "Segoe UI", "Roboto", "Noto Sans", "Ubuntu", "Cantarell", "Helvetica Neue";
+    margin: 0;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* Reset CSS */
+
+#container-main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem 0;
+    background-color: var(--background-color);
+    gap: 1rem;
+    background-image: url("./images/45degreee_fabric.png");
 }
 
 h1{
     text-align: center;
-    text-decoration: underline;
-    text-shadow: 0 0 2px #000;
-    color: var(--color-text);
+    color: var(--title-color);
+    font-size: 2rem;
 }
 
-#container{
-    width: 25rem;
+#calculator-container{
+    width: 400px;
     height: 600px;
-    border: 1px solid #000;
     display: grid;
     grid-template-columns: repeat(4,100px);
     grid-template-rows: repeat(6,100px);
@@ -39,192 +101,167 @@ h1{
     "cuatro cinco seis mas"
     "uno dos tres igual"
     "signo cero coma igual";
-    box-shadow: 0 0 2px #000;
+    box-shadow: var(--shadow-elevation-medium);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
+
+.container-main-header{
+    transform: translate(0,-20%);
 }
 
 img{
-    width: 50px;
-    height: 50px;
-    filter: invert(82%) sepia(25%) saturate(5082%) hue-rotate(336deg) brightness(102%) contrast(101%);
-    margin-top: 7px;
+    width: 3.125rem;
+    height: 3.125rem;
+    filter: invert(30%) sepia(96%) saturate(887%) hue-rotate(176deg) brightness(94%) contrast(88%);
 }
 
 #display-res{
     font-size: 70px;
-    margin-top: 10px;
     text-align: right;
-    margin-right: 10px;
     color: var(--color-text);
-    text-shadow: 0 0 2px #000;
+    padding: .6rem;
 }
 
 button{
     font-size: 30px;
     border: none;
-    border: 1px solid #000;
     font-weight: 900;
     cursor: pointer;
-    text-shadow: 0 0 2px #000;
 }
 
 #disp-cont{
     grid-area: result;
-    border: 1px solid #000;
+    background-color: var(--color-osc);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.uno, .dos, .tres,
+.cuatro, .cinco, .seis,
+.siete, .ocho, .nueve,
+.chans, .dot, .cero{
+    color: var(--color-text);
     background-color: var(--color-osc);
 }
 
 .uno{
     grid-area: uno;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .dos{
     grid-area: dos;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .tres{
     grid-area: tres;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 
 .cuatro{
     grid-area: cuatro;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .cinco{
     grid-area: cinco;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .seis{
     grid-area: seis;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 
 .siete{
     grid-area: siete;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .ocho{
     grid-area: ocho;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .nueve{
     grid-area: nueve;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
-
 .cero{
     grid-area: cero;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
 .chans{
     grid-area: signo;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
+    border-bottom-left-radius: var(--border-radius);
 }
 .dot{
     grid-area: coma;
-    color: var(--color-text);
-    border: 1px solid #000;
-    background-color: var(--color-osc);
 }
-.nums:hover{
-    background-color: var(--hov-num);
-}
-.dot:hover{
-    background-color: var(--hov-num);
-}
+
+.nums:hover,
+.dot:hover,
 .chans:hover{
     background-color: var(--hov-num);
 }
 
 
-
 #equal{
     grid-area: igual;
-    background-color: #ffa62b;
-    color: var(--color-text);
+    background-color: var(--equal-color-bg);
+    color: var(--equal-color);
+    border-bottom-right-radius: var(--border-radius);
 }
 #equal:hover{
-    background-color: #d18822;
+    background-color: var(--equal-hover);
 }
+
 
 #resta{
     grid-area: menos;
-    background-color: var(--color-ops);
-    color: var(--color-fops);
-}
-#resta:hover{
-    background-color: var(--hov-props);
 }
 
 #suma{
     grid-area: mas;
-    background-color: var(--color-ops);
-    color: var(--color-fops);
-}
-#suma:hover{
-    background-color: var(--hov-props);
 }
 
 #reset{
     grid-area: reset;
-    background-color: var(--color-ops);
-    color: var(--color-fops);
 }
-#reset:hover{
-    background-color: var(--hov-props);
-}
+
 
 #divid{
     grid-area: div;
-    background-color: var(--color-ops);
-    color: var(--color-fops);
-}
-#divid:hover{
-    background-color: var(--hov-props);
 }
 
 #back{
     grid-area: back;
-    background-color: var(--color-ops);
-    color: var(--color-fops);
-}
-#back:hover{
-    background-color: var(--hov-props);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #multi{
     grid-area: multi;
+
+}
+
+#back, #divid, #suma,
+#reset, #multi, #resta{
     background-color: var(--color-ops);
     color: var(--color-fops);
 }
-#multi:hover{
+
+#resta:hover, #suma:hover, #reset:hover,
+#divid:hover, #back:hover, #multi:hover{
     background-color: var(--hov-props);
 }
-
 #error{
-    color: var(--color-text);
-    font-size: 20px;
+    color: var(--title-color);
+    font-size: 1.25rem;
 }
 
+@media screen and (max-width: 500px) {
+    #error{
+        display: flex;
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+    #calculator-container{
+        width: 20.625rem;
+        height: 30.9375rem;
+        grid-template-columns: repeat(4,calc(20.625rem / 4));
+        grid-template-rows: repeat(6,calc(30.9375rem / 6));
+    }
+    #display-res{
+        padding: 0;
+        font-size: 3.2rem;
+        transform: translate(-2%);
+    }
+}
